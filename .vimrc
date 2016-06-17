@@ -11,6 +11,7 @@ Plugin 'gavinbeatty/dragvisuals.vim'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kien/ctrlp.vim'
 Bundle 'ELouisYoung/vim-better-molokai'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
