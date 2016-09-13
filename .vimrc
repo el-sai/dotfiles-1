@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'gavinbeatty/dragvisuals.vim'
@@ -14,8 +13,11 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/syntastic'
+Plugin 'mxw/vim-jsx'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'nono/vim-handlebars'
 Plugin 'Townk/vim-autoclose'
 
 
@@ -68,3 +70,8 @@ nnoremap <Leader>e gT
 
 " Remove any introduced trailing whitespace after moving...  
 let g:DVB_TrimWS = 1
+
+nmap <silent> <C-l> <Plug>(jsdoc)
+let g:jsdoc_enable_es6 = 1
+
+let g:jsx_ext_required = 0
