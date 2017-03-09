@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+filetype off                                                                                                                                                                                                                                                               [42/48]
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 " let Vundle manage Vundle, required
@@ -11,7 +11,6 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
-" Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'mxw/vim-jsx'
@@ -19,9 +18,9 @@ Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'nono/vim-handlebars'
 Plugin 'Townk/vim-autoclose'
-
-
-" Plugin 'ELouisYoung/vim-better-molokai'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'joshdick/onedark.vim'
+Plugin 'chrisbra/Colorizer' 
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -34,26 +33,20 @@ set number
 highlight ColorColumn ctermbg=DarkGray
 set colorcolumn=80
 set smartcase
-syntax on             " Enable syntax highlighting
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-" colo better-molokai
-" let g:solarized_termcolors=16
-" syntax enable
-" set background=dark
-" colorscheme solarized
+let g:onedark_termcolors=256
+syntax on             " Enable syntax highlighting
+colorscheme onedark
+
+let g:ctrlp_max_files=0
 
 highlight ExtraWhitespace ctermbg=Magenta
 
-" Fold methods............................................
-" set foldenable
-" set foldmethod=indent
-" set foldlevel=1
-" End of Fold methods ....................................
-
 :nnoremap <C-g> :NERDTreeToggle<CR>
+:noremap <F4> :ColorToggle<CR>
 :noremap <F3> :set hlsearch! hlsearch?<CR>
 :noremap <F2> :ToggleWhitespace<CR>
 vmap  <expr>  <LEFT>   DVB_Drag('left')
@@ -66,7 +59,6 @@ let mapleader = "\<Space>"
 nnoremap <Leader>r gt
 nnoremap <Leader>e gT
 
-" inoremap {<CR> {<CR>}<C-o>O
 
 " Remove any introduced trailing whitespace after moving...  
 let g:DVB_TrimWS = 1
@@ -75,3 +67,10 @@ nmap <silent> <C-l> <Plug>(jsdoc)
 let g:jsdoc_enable_es6 = 1
 
 let g:jsx_ext_required = 0
+
+" Console log from insert mode; Puts focus inside parentheses
+imap cll console.log();<Esc>==f(a
+" Console log from visual mode on next line, puts visual selection inside parentheses
+vmap cll yocll<Esc>p
+" Console log from normal mode, inserted on next line with word your on inside parentheses
+nmap cll yiwocll<Esc>p )
