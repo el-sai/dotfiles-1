@@ -23,6 +23,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'joshdick/onedark.vim'
 Plugin 'chrisbra/Colorizer'
 Plugin 'sevko/vim-nand2tetris-syntax'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
