@@ -13,9 +13,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'ntpeters/vim-better-whitespace'
 " Plugin 'altercation/vim-colors-solarized'
 Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
 Plugin 'mxw/vim-jsx'
-Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'heavenshell/vim-jsdoc'
 Plugin 'nono/vim-handlebars'
 Plugin 'Townk/vim-autoclose'
@@ -24,6 +22,8 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'chrisbra/Colorizer'
 Plugin 'sevko/vim-nand2tetris-syntax'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'stephenway/postcss.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -80,7 +80,8 @@ let g:jsdoc_enable_es6 = 1
 
 let g:jsx_ext_required = 0
 
-
+"Faster <C-y>
+imap <C-b> <Space><BS>
 " Console log from insert mode; Puts focus inside parentheses
 imap cll console.log();<Esc>==f(a
 imap dsc describe('', () => {<CR>  it('', () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f'a
@@ -89,3 +90,9 @@ imap iii it('', () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f'a
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 nmap cll yiwocll<Esc>p )
+" Need to check why the following breaks dragvisual
+vmap " c""<Esc>P
+vmap ( c()<Esc>P
+vmap [ c[]<Esc>P
+vmap { c{}<Esc>P
+
