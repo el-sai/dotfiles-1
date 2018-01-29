@@ -98,7 +98,7 @@ imap iii it('', () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f'a
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 nmap cll yiwocll<Esc>p )
-vmap " c""<Esc>P
-vmap ( c()<Esc>P
-vmap [ c[]<Esc>P
-vmap { c{}<Esc>P
+nnoremap <Leader>" viwdi"<Esc>pa"
+nnoremap <Leader>( viwdi(<Esc>pa)
+nnoremap <Leader>[ viwdi[<Esc>pa]
+nnoremap <Leader>{ viwdi{<Esc>pa}
