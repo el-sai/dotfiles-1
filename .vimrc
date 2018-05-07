@@ -1,6 +1,6 @@
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
@@ -56,7 +56,7 @@ colorscheme ceudah
 let g:ctrlp_max_files=0
 set ignorecase
 
-highlight ExtraWhitespace ctermbg=Magenta
+highlight ExtraWhitespace guibg=#87d7ff ctermbg=Blue
 
 " Fold methods............................................
 " set foldenable
@@ -92,13 +92,15 @@ let g:jsx_ext_required = 0
 imap <C-b> <Space><BS>
 " Console log from insert mode; Puts focus inside parentheses
 imap cll console.log();<Esc>==f(a
-imap dsc describe('', () => {<CR>  it('', () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f'a
-imap iii it('', () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f'a
+imap dsc describe("", () => {<CR>  it("", () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f'a
+imap iii it("", () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f'a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 nmap cll yiwocll<Esc>p )
-nnoremap <Leader>" viwdi"<Esc>pa"
-nnoremap <Leader>( viwdi(<Esc>pa)
-nnoremap <Leader>[ viwdi[<Esc>pa]
-nnoremap <Leader>{ viwdi{<Esc>pa}
+vmap "" c""<Esc>P
+vmap (( c()<Esc>P
+vmap [[ c[]<Esc>P
+vmap {{ c{}<Esc>P
+
+abbr tc :tabclose<CR>
