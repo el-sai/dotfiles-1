@@ -7,3 +7,5 @@ update-apt:
 install-goodies:
 	./scripts/install_goodies.sh
 
+fix-permissions:
+	sudo chown ${USER}:${USER} -R .
