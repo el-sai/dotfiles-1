@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install from apt
-apt-get install git-core tmux vim curl gnome-tweak-tool gpick cheese kazam silversearcher-ag -y
+apt-get install git-core tmux vim curl gnome-tweak-tool gpick cheese kazam silversearcher-ag tree -y
 
 #install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
