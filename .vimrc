@@ -92,8 +92,15 @@ let g:jsx_ext_required = 0
 imap <C-b> <Space><BS>
 " Console log from insert mode; Puts focus inside parentheses
 imap cll console.log();<Esc>==f(a
-imap dsc describe("", () => {<CR>  it("", () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f'a
-imap iii it("", () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f'a
+imap dsc describe("", () => {<CR>  it("", () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f"a
+imap iii it("", () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f"a
+imap ~~a á
+imap ~~e é
+imap ~~i í
+imap ~~o ó
+imap ~~u ú
+imap ~~n ñ
+
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
