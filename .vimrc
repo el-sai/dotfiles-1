@@ -3,31 +3,20 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 " let Vundle manage Vundle, required
+
+Plugin 'Townk/vim-autoclose'
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-ruby/vim-ruby'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'gavinbeatty/dragvisuals.vim'
+Plugin 'heavenshell/vim-jsdoc'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'ntpeters/vim-better-whitespace'
-" Plugin 'altercation/vim-colors-solarized'
-Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'heavenshell/vim-jsdoc'
-Plugin 'nono/vim-handlebars'
-Plugin 'Townk/vim-autoclose'
-Plugin 'elixir-lang/vim-elixir'
-"Plugin 'joshdick/onedark.vim'
-"Plugin 'flazz/vim-colorschemes'
-Plugin 'emhaye/ceudah.vim'
-Plugin 'chrisbra/Colorizer'
-Plugin 'sevko/vim-nand2tetris-syntax'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'stephenway/postcss.vim'
-
-" Plugin 'ELouisYoung/vim-better-molokai'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'pangloss/vim-javascript'
+Plugin 'scrooloose/nerdtree'
+Plugin 'joshdick/onedark.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -44,25 +33,13 @@ filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
-"set termguicolors
-"let g:onedark_termcolors=256
 syntax on             " Enable syntax highlighting
-"colorscheme onedark
-"colorscheme visualstudio
-set background=dark
-set termguicolors
-colorscheme ceudah
+colorscheme onedark
 
 let g:ctrlp_max_files=0
 set ignorecase
 
 highlight ExtraWhitespace guibg=#87d7ff ctermbg=Blue
-
-" Fold methods............................................
-" set foldenable
-" set foldmethod=indent
-" set foldlevel=1
-" End of Fold methods ....................................
 
 :nnoremap <C-g> :NERDTreeToggle<CR>
 :noremap <F4> :ColorToggle<CR>
@@ -78,13 +55,11 @@ let mapleader = "\<Space>"
 nnoremap <Leader>r gt
 nnoremap <Leader>e gT
 
-" inoremap {<CR> {<CR>}<C-o>O
-
 " Remove any introduced trailing whitespace after moving...  
 let g:DVB_TrimWS = 1
 
 nmap <silent> <C-l> <Plug>(jsdoc)
-let g:jsdoc_enable_es6 = 1
+"let g:jsdoc_enable_es6 = 1
 
 let g:jsx_ext_required = 0
 
@@ -92,15 +67,8 @@ let g:jsx_ext_required = 0
 imap <C-b> <Space><BS>
 " Console log from insert mode; Puts focus inside parentheses
 imap cll console.log();<Esc>==f(a
-imap dsc describe("", () => {<CR>  it("", () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f"a
-imap iii it("", () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f"a
-imap ~~a á
-imap ~~e é
-imap ~~i í
-imap ~~o ó
-imap ~~u ú
-imap ~~n ñ
-
+imap dsc describe("", () => {<CR>  it("", () => {<CR>  expect();<CR>});<CR>}<Esc>A;<Esc>V4k=f'a
+imap iii it("", () => {<CR> expect()<CR>}<Esc>A;<Esc>V2k=f'a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap cll yocll<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
